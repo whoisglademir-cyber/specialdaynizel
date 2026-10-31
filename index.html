@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday!</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #160d29, #43215f, #8e63a9);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.container {
+    padding: 65px 20px;
+    max-width: 700px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 42px;
+    color: #e6c9ff;
+    margin-bottom: 15px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #d9b3ff; }
+    to { text-shadow: 0 0 25px #d9b3ff; }
+}
+
+.subtitle {
+    font-size: 17px;
+    margin-bottom: 35px;
+    color: #eadcf5;
+}
+
+.cake {
+    font-size: 90px;
+    margin: 25px 0;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-12px); }
+}
+
+button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #9370DB;
+    color: #32134d;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    transform: scale(1.08);
+}
+
+.message {
+    display: none;
+    margin: 30px auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    line-height: 1.8;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    margin-top: 55px;
+    font-size: 13px;
+    color: #d8c4e8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- EDIT THE NAME HERE -->
+    <h1>Happy Birthday, Pretty Zel! 💜</h1>
+
+    <!-- EDIT THE SUBTITLE -->
+    <p class="subtitle">
+        Today is a special day dahil birthday ng napaka-pretty na future teacher.
+    </p>
+
+    <div class="cake">🎂</div>
+
+    <p>
+        I prepared a little surprise for you.
+        I hope this brings a smile to your face.
+    </p>
+
+    <br>
+
+    <button onclick="openGift()">
+        Open Your Birthday Gift 🎁
+    </button>
+
+    <div class="message" id="birthdayMessage">
+
+        <!-- EDIT YOUR PERSONAL MESSAGE HERE -->
+
+        <h2>A Message For You 💌</h2>
+
+        <p>
+            Happiest Birthday!
+
+            Sa'yo lang ang araw na ito, kaya't sana ay maging maligaya ka.
+            Special na special ka sa akin, araw araw akong nagpapasalamat kay Lord God
+            dahil dumating ka sa buhay ko. Palagi mo lang tatandaan na naririto lang ako,
+            kailanganin mo man o hindi.
+
+            Alam ko namang hindi ka fan ng word of affirmation,
+            pero ito lang ang way sa ngayon para maipaalam ko sa'yo ang nais kong sabihin.
+            Kung friend lang ang tingin mo sa akin, matatanggap ko naman.
+            Pero ang bawiin ka ulit sa akin, hindi ko siguro kaya.
+
+            You deserve all the wonderful things life has
+            to offer. Mag iingat ka palagi ma'am pretty,
+            palagi kang kasama sa mga prayers ko.
+
+            <br><br>
+
+            Once again, Happy Birthday Ma'am Pretty!
+            Always take care of yourself. 💜
+        </p>
+
+        <br>
+
+        <h3>With sincere wishes,</h3>
+        <p>Glademir Carandang</p>
+
+    </div>
+
+    <footer>
+        December 9, makakalimutan ko ba ang special day na ito? 💜
+    </footer>
+
+</div>
+
+<script>
+function openGift() {
+    document.getElementById("birthdayMessage").style.display = "block";
+}
+
+// Floating hearts animation
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "💜";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
